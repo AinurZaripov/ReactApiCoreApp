@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fZruu2DXwpvedGpDdmnq45KNov00AYuBze9NhjS/BT3H/r5ayr+ki6FkBJm3HJXO+LfYbox6dJahAccQhK8c5w==",
+  "dgSpecHash": "Q6LOQsQ6vOoiCuLAMrKlfDPVfmwMTt1ZYl9Zaz7oD16xI8mBxvOwl+hbVo7sK8Dlk+76ZQbAgJsJS82ofTsfAQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Love\\source\\repos\\ReactCoreApiApp\\ReactCoreApiApp\\ReactCoreApiApp.csproj",
+  "projectFilePath": "C:\\Users\\Love\\Documents\\GitKraken\\ReactCoreaApiApp\\ReactCoreApiApp\\ReactCoreApiApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Love\\.nuget\\packages\\advancedstringbuilder\\0.1.0\\advancedstringbuilder.0.1.0.nupkg.sha512",
     "C:\\Users\\Love\\.nuget\\packages\\javascriptengineswitcher.chakracore\\3.7.2\\javascriptengineswitcher.chakracore.3.7.2.nupkg.sha512",

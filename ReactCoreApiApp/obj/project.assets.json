@@ -9560,11 +9560,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Love\\source\\repos\\ReactCoreApiApp\\ReactCoreApiApp\\ReactCoreApiApp.csproj",
+      "projectUniqueName": "C:\\Users\\Love\\Documents\\GitKraken\\ReactCoreaApiApp\\ReactCoreApiApp\\ReactCoreApiApp.csproj",
       "projectName": "ReactCoreApiApp",
-      "projectPath": "C:\\Users\\Love\\source\\repos\\ReactCoreApiApp\\ReactCoreApiApp\\ReactCoreApiApp.csproj",
+      "projectPath": "C:\\Users\\Love\\Documents\\GitKraken\\ReactCoreaApiApp\\ReactCoreApiApp\\ReactCoreApiApp.csproj",
       "packagesPath": "C:\\Users\\Love\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Love\\source\\repos\\ReactCoreApiApp\\ReactCoreApiApp\\obj\\",
+      "outputPath": "C:\\Users\\Love\\Documents\\GitKraken\\ReactCoreaApiApp\\ReactCoreApiApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Love\\AppData\\Roaming\\NuGet\\NuGet.Config",
