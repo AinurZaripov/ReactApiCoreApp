@@ -15,6 +15,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using React.AspNet;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using ReactCoreApiApp.Repository;
 
 namespace ReactCoreApiApp
 {
@@ -37,6 +39,7 @@ namespace ReactCoreApiApp
 
             services.AddControllers();
             services.AddDbContext<ShopContext>();
+            services.AddScoped(typeof(IGenericRepository<>), typeof(EFGenericRepository<>));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

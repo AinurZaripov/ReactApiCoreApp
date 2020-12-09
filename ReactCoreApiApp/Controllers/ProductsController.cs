@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ReactCoreApiApp;
+using ReactCoreApiApp.Filters;
 
 namespace ReactCoreApiApp.Controllers
 {
@@ -22,6 +23,7 @@ namespace ReactCoreApiApp.Controllers
 
         // GET: api/Products
         [HttpGet]
+        [BaseResourceFilters]
         public async Task<ActionResult<IEnumerable<Products>>> GetProducts()
         {
             return await _context.Products.ToListAsync();

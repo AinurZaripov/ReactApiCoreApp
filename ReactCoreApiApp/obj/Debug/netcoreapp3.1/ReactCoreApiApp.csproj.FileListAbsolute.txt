@@ -350,9 +350,6 @@ C:\Users\Love\Documents\GitKraken\ReactCoreaApiApp\ReactCoreApiApp\bin\Debug\net
 C:\Users\Love\Documents\GitKraken\ReactCoreaApiApp\ReactCoreApiApp\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Love\Documents\GitKraken\ReactCoreaApiApp\ReactCoreApiApp\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Love\Documents\GitKraken\ReactCoreaApiApp\ReactCoreApiApp\obj\Debug\netcoreapp3.1\ReactCoreApiApp.csprojAssemblyReference.cache
-C:\Users\Love\Documents\GitKraken\ReactCoreaApiApp\ReactCoreApiApp\obj\Debug\netcoreapp3.1\ReactCoreApiApp.csproj.CoreCompileInputs.cache
-C:\Users\Love\Documents\GitKraken\ReactCoreaApiApp\ReactCoreApiApp\obj\Debug\netcoreapp3.1\ReactCoreApiApp.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Love\Documents\GitKraken\ReactCoreaApiApp\ReactCoreApiApp\obj\Debug\netcoreapp3.1\ReactCoreApiApp.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Love\Documents\GitKraken\ReactCoreaApiApp\ReactCoreApiApp\obj\Debug\netcoreapp3.1\ReactCoreApiApp.AssemblyInfoInputs.cache
 C:\Users\Love\Documents\GitKraken\ReactCoreaApiApp\ReactCoreApiApp\obj\Debug\netcoreapp3.1\ReactCoreApiApp.AssemblyInfo.cs
 C:\Users\Love\Documents\GitKraken\ReactCoreaApiApp\ReactCoreApiApp\obj\Debug\netcoreapp3.1\ReactCoreApiApp.RazorTargetAssemblyInfo.cache
@@ -362,3 +359,9 @@ C:\Users\Love\Documents\GitKraken\ReactCoreaApiApp\ReactCoreApiApp\obj\Debug\net
 C:\Users\Love\Documents\GitKraken\ReactCoreaApiApp\ReactCoreApiApp\obj\Debug\netcoreapp3.1\ReactCoreApiApp.dll
 C:\Users\Love\Documents\GitKraken\ReactCoreaApiApp\ReactCoreApiApp\obj\Debug\netcoreapp3.1\ReactCoreApiApp.pdb
 C:\Users\Love\Documents\GitKraken\ReactCoreaApiApp\ReactCoreApiApp\obj\Debug\netcoreapp3.1\ReactCoreApiApp.genruntimeconfig.cache
+C:\Users\Love\Documents\GitKraken\ReactCoreaApiApp\ReactCoreApiApp\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
+C:\Users\Love\Documents\GitKraken\ReactCoreaApiApp\ReactCoreApiApp\bin\Debug\netcoreapp3.1\System.Web.Http.dll
+C:\Users\Love\Documents\GitKraken\ReactCoreaApiApp\ReactCoreApiApp\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\Love\Documents\GitKraken\ReactCoreaApiApp\ReactCoreApiApp\obj\Debug\netcoreapp3.1\ReactCoreApiApp.csproj.CoreCompileInputs.cache
+C:\Users\Love\Documents\GitKraken\ReactCoreaApiApp\ReactCoreApiApp\obj\Debug\netcoreapp3.1\ReactCoreApiApp.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Love\Documents\GitKraken\ReactCoreaApiApp\ReactCoreApiApp\obj\Debug\netcoreapp3.1\ReactCoreApiApp.MvcApplicationPartsAssemblyInfo.cache

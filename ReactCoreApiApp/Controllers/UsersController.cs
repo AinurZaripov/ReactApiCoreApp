@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ReactCoreApiApp;
+using ReactCoreApiApp.Filters;
 
 namespace ReactCoreApiApp.Controllers
 {
@@ -14,7 +15,6 @@ namespace ReactCoreApiApp.Controllers
     public class UsersController : ControllerBase
     {
         private readonly ShopContext _context;
-
         public UsersController(ShopContext context)
         {
             _context = context;
@@ -22,6 +22,7 @@ namespace ReactCoreApiApp.Controllers
 
         // GET: api/Users
         [HttpGet]
+        [BaseResourceFilters]
         public async Task<ActionResult<IEnumerable<Users>>> GetUsers()
         {
             return await _context.Users.ToListAsync();
