@@ -362,6 +362,7 @@ C:\Users\Love\Documents\GitKraken\ReactCoreaApiApp\ReactCoreApiApp\obj\Debug\net
 C:\Users\Love\Documents\GitKraken\ReactCoreaApiApp\ReactCoreApiApp\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
 C:\Users\Love\Documents\GitKraken\ReactCoreaApiApp\ReactCoreApiApp\bin\Debug\netcoreapp3.1\System.Web.Http.dll
 C:\Users\Love\Documents\GitKraken\ReactCoreaApiApp\ReactCoreApiApp\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\Love\Documents\GitKraken\ReactCoreaApiApp\ReactCoreApiApp\bin\Debug\netcoreapp3.1\NLog.dll
 C:\Users\Love\Documents\GitKraken\ReactCoreaApiApp\ReactCoreApiApp\obj\Debug\netcoreapp3.1\ReactCoreApiApp.csproj.CoreCompileInputs.cache
 C:\Users\Love\Documents\GitKraken\ReactCoreaApiApp\ReactCoreApiApp\obj\Debug\netcoreapp3.1\ReactCoreApiApp.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Love\Documents\GitKraken\ReactCoreaApiApp\ReactCoreApiApp\obj\Debug\netcoreapp3.1\ReactCoreApiApp.MvcApplicationPartsAssemblyInfo.cache
