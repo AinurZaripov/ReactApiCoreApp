@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "sz/fhcvP4YXRolpqcZfzaORgB7Lx7sIypHvlp0ojC8Z7ANo5fD2/cPqFjEbohBe1Q1fJTFUj1MEdiFG5F7VaXA==",
+  "dgSpecHash": "xgLxLGVkfegiEp3cDHBszA6ZJ+7Mg141f/qy9nPZRDt9wbLtmq1AIgS4ETmnEUDlrCVERQotwjsoTTNKxwc9LA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Love\\Documents\\GitKraken\\ReactCoreaApiApp\\ReactCoreApiApp\\ReactCoreApiApp.csproj",
   "expectedPackageFiles": [
@@ -84,6 +84,7 @@
     "C:\\Users\\Love\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\Love\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\Love\\.nuget\\packages\\newtonsoft.json.bson\\1.0.1\\newtonsoft.json.bson.1.0.1.nupkg.sha512",
+    "C:\\Users\\Love\\.nuget\\packages\\nlog\\4.7.6\\nlog.4.7.6.nupkg.sha512",
     "C:\\Users\\Love\\.nuget\\packages\\nuget.frameworks\\4.7.0\\nuget.frameworks.4.7.0.nupkg.sha512",
     "C:\\Users\\Love\\.nuget\\packages\\react.aspnet\\5.2.11\\react.aspnet.5.2.11.nupkg.sha512",
     "C:\\Users\\Love\\.nuget\\packages\\react.aspnet.middleware\\5.2.11\\react.aspnet.middleware.5.2.11.nupkg.sha512",

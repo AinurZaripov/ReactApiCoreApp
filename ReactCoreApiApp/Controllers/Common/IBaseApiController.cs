@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,10 +10,10 @@ namespace ReactCoreApiApp.Controllers.Common
     interface IBaseApiController<T> where T : class
     {
         IList<T> Get();
-        //IHttpActionResult Get(int id);
-        //IHttpActionResult Put(int id, T item);
-        //IHttpActionResult Post(T item);
-        //IHttpActionResult Delete(int id);
-        //IHttpActionResult Delete(string _filters);
+        IActionResult Get(int id);
+        IActionResult Put(T item);
+        IActionResult Post(T item);
+        IActionResult Delete(T item);
+        IActionResult Delete(string filter);
     }
 }

@@ -21,7 +21,6 @@ namespace ReactCoreApiApp.Controllers
         {
         }
 
-
         // GET: api/Addresses
         [HttpGet]
         public override IList<Addresses> Get()
@@ -31,113 +30,37 @@ namespace ReactCoreApiApp.Controllers
 
         // GET: api/Addresses/5
         [HttpGet("{id}")]
-        public override Addresses FindById(int id)
+        public override IActionResult Get(int id)
         {
-            return base.FindById(id);
+            return base.Get(id);
         }
 
-
-        
-        //// GET: api/Addresses/5
-        //[HttpGet("{id}")]
-        //public async Task<ActionResult<Addresses>> GetAddresses(int id)
-        //{
-        //    var addresses = await _context.Addresses.FindAsync(id);
-
-        //    if (addresses == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    return addresses;
-        //}
-
         //// PUT: api/Addresses/5
-        //// To protect from overposting attacks, enable the specific properties you want to bind to, for
-        //// more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
-        //[HttpPut("{id}")]
-        //public async Task<IActionResult> PutAddresses(int id, Addresses addresses)
-        //{
-        //    if (id != addresses.Id)
-        //    {
-        //        return BadRequest();
-        //    }
-
-        //    _context.Entry(addresses).State = EntityState.Modified;
-
-        //    try
-        //    {
-        //        await _context.SaveChangesAsync();
-        //    }
-        //    catch (DbUpdateConcurrencyException)
-        //    {
-        //        if (!AddressesExists(id))
-        //        {
-        //            return NotFound();
-        //        }
-        //        else
-        //        {
-        //            throw;
-        //        }
-        //    }
-
-        //    return NoContent();
-        //}
+        [HttpPut("{id}")]
+        public override IActionResult Put(Addresses addresses)
+        {
+            return base.Put(addresses);
+        }
 
         //// POST: api/Addresses
-        //// To protect from overposting attacks, enable the specific properties you want to bind to, for
-        //// more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
-        //[HttpPost]
-        //public async Task<ActionResult<Addresses>> PostAddresses(Addresses addresses)
-        //{
-        //    _context.Addresses.Add(addresses);
-        //    await _context.SaveChangesAsync();
-
-        //    return CreatedAtAction("GetAddresses", new { id = addresses.Id }, addresses);
-        //}
+        [HttpPost]
+        public override IActionResult Post(Addresses addresses)
+        {
+            return base.Post(addresses);
+        }
 
         //// DELETE: api/Addresses/5
-        //[HttpDelete("{id}")]
-        //public async Task<ActionResult<Addresses>> DeleteAddresses(int id)
-        //{
-        //    var addresses = await _context.Addresses.FindAsync(id);
-        //    if (addresses == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    _context.Addresses.Remove(addresses);
-        //    await _context.SaveChangesAsync();
-
-        //    return addresses;
-        //}
-
-        //[HttpDelete]
-        //public async Task<ActionResult<Addresses>> DeleteAddresses(string filter)
-        //{
-        //    var ListId = JsonConvert.DeserializeObject<Root>(filter);
-        //    if (ListId.id == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    Addresses addresses = new Addresses();
-        //    foreach (var item in ListId.id)
-        //    {
-        //        addresses = await _context.Addresses.FindAsync(item);
-        //        _context.Addresses.Remove(addresses);
-        //        await _context.SaveChangesAsync();
-        //    }
-
-        //    return Ok();
-        //}
-
-        //private bool AddressesExists(int id)
-        //{
-        //    return _context.Addresses.Any(e => e.Id == id);
-        //}
-        public class Root
+        [HttpDelete("{id}")]
+        public override IActionResult Delete(Addresses addresses)
         {
-            public List<int> id { get; set; }
+            return base.Delete(addresses);
+        }
+
+        // DELETE: api/Addresses/filter={,,,}
+        [HttpDelete]
+        public override IActionResult Delete(string filter)
+        {
+            return base.Delete(filter);
         }
 
     }
