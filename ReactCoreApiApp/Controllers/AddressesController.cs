@@ -62,6 +62,5 @@ namespace ReactCoreApiApp.Controllers
         {
             return base.Delete(filter);
         }
-
     }
 }
