@@ -16,7 +16,13 @@ using Microsoft.Extensions.Logging;
 using React.AspNet;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
-using ReactCoreApiApp.Repository;
+using AutoMapper;
+using Ninject;
+using System.Web.Mvc;
+using Ninject.Web.WebApi;
+using ReactCoreApiApp.DAL.Interfaces;
+using ReactCoreApiApp.DAL.Repositories;
+using ReactCoreApiApp.DAL.EF;
 
 namespace ReactCoreApiApp
 {
@@ -32,14 +38,17 @@ namespace ReactCoreApiApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAutoMapper(typeof(Startup));
             services.AddMemoryCache();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddReact();
             services.AddJsEngineSwitcher(options => options.DefaultEngineName = ChakraCoreJsEngine.EngineName).AddChakraCore();
 
-            services.AddControllers();
+            //services.AddControllers();
             services.AddDbContext<ShopContext>();
             services.AddScoped(typeof(IGenericRepository<>), typeof(EFGenericRepository<>));
+            services.AddControllers().AddNewtonsoftJson();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -64,6 +73,18 @@ namespace ReactCoreApiApp
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            app.Use((ctx, next) =>
+            {
+                ctx.Response.Headers.Add("Access-Control-Expose-Headers", "*");
+                if (ctx.Request.Method.ToLower() == "options")
+                {
+                    ctx.Response.StatusCode = 204;
+
+                    return Task.CompletedTask;
+                }
+                return next();
             });
 
             app.UseSpa(spa =>

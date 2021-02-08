@@ -1,0 +1,12 @@
+C:\Users\Love\Documents\GitKraken\ReactCoreaApiApp\ReactCoreApiApp.BLL\bin\Debug\netcoreapp3.1\ReactCoreApiApp.DAL.dll
+C:\Users\Love\Documents\GitKraken\ReactCoreaApiApp\ReactCoreApiApp.BLL\obj\Debug\netcoreapp3.1\ReactCoreApiApp.BLL.csprojAssemblyReference.cache
+C:\Users\Love\Documents\GitKraken\ReactCoreaApiApp\ReactCoreApiApp.BLL\obj\Debug\netcoreapp3.1\ReactCoreApiApp.BLL.AssemblyInfoInputs.cache
+C:\Users\Love\Documents\GitKraken\ReactCoreaApiApp\ReactCoreApiApp.BLL\obj\Debug\netcoreapp3.1\ReactCoreApiApp.BLL.AssemblyInfo.cs
+C:\Users\Love\Documents\GitKraken\ReactCoreaApiApp\ReactCoreApiApp.BLL\bin\Debug\netcoreapp3.1\ReactCoreApiApp.BLL.deps.json
+C:\Users\Love\Documents\GitKraken\ReactCoreaApiApp\ReactCoreApiApp.BLL\bin\Debug\netcoreapp3.1\ReactCoreApiApp.BLL.dll
+C:\Users\Love\Documents\GitKraken\ReactCoreaApiApp\ReactCoreApiApp.BLL\bin\Debug\netcoreapp3.1\ReactCoreApiApp.BLL.pdb
+C:\Users\Love\Documents\GitKraken\ReactCoreaApiApp\ReactCoreApiApp.BLL\bin\Debug\netcoreapp3.1\ReactCoreApiApp.DAL.pdb
+C:\Users\Love\Documents\GitKraken\ReactCoreaApiApp\ReactCoreApiApp.BLL\obj\Debug\netcoreapp3.1\ReactCoreApiApp.BLL.csproj.CoreCompileInputs.cache
+C:\Users\Love\Documents\GitKraken\ReactCoreaApiApp\ReactCoreApiApp.BLL\obj\Debug\netcoreapp3.1\ReactCoreApiApp.BLL.csproj.CopyComplete
+C:\Users\Love\Documents\GitKraken\ReactCoreaApiApp\ReactCoreApiApp.BLL\obj\Debug\netcoreapp3.1\ReactCoreApiApp.BLL.dll
+C:\Users\Love\Documents\GitKraken\ReactCoreaApiApp\ReactCoreApiApp.BLL\obj\Debug\netcoreapp3.1\ReactCoreApiApp.BLL.pdb

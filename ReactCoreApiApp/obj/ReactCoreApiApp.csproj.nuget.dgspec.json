@@ -4,6 +4,86 @@
     "C:\\Users\\Love\\Documents\\GitKraken\\ReactCoreaApiApp\\ReactCoreApiApp\\ReactCoreApiApp.csproj": {}
   },
   "projects": {
+    "C:\\Users\\Love\\Documents\\GitKraken\\ReactCoreaApiApp\\ReactCoreApiApp.DAL\\ReactCoreApiApp.DAL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Love\\Documents\\GitKraken\\ReactCoreaApiApp\\ReactCoreApiApp.DAL\\ReactCoreApiApp.DAL.csproj",
+        "projectName": "ReactCoreApiApp.DAL",
+        "projectPath": "C:\\Users\\Love\\Documents\\GitKraken\\ReactCoreaApiApp\\ReactCoreApiApp.DAL\\ReactCoreApiApp.DAL.csproj",
+        "packagesPath": "C:\\Users\\Love\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Love\\Documents\\GitKraken\\ReactCoreaApiApp\\ReactCoreApiApp.DAL\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Love\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer.Design": {
+              "target": "Package",
+              "version": "[1.1.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\Love\\Documents\\GitKraken\\ReactCoreaApiApp\\ReactCoreApiApp\\ReactCoreApiApp.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -26,7 +106,12 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "projectReferences": {}
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\Love\\Documents\\GitKraken\\ReactCoreaApiApp\\ReactCoreApiApp.DAL\\ReactCoreApiApp.DAL.csproj": {
+                "projectPath": "C:\\Users\\Love\\Documents\\GitKraken\\ReactCoreaApiApp\\ReactCoreApiApp.DAL\\ReactCoreApiApp.DAL.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -37,7 +122,16 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.1.0, )"
+            },
             "JavaScriptEngineSwitcher.ChakraCore": {
               "target": "Package",
               "version": "[3.7.2, )"
@@ -66,25 +160,29 @@
               "target": "Package",
               "version": "[3.3.0, )"
             },
+            "Microsoft.AspNet.Mvc": {
+              "target": "Package",
+              "version": "[5.2.7, )"
+            },
             "Microsoft.AspNet.WebApi.Core": {
               "target": "Package",
               "version": "[5.2.7, )"
             },
-            "Microsoft.AspNetCore.SpaServices.Extensions": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
               "target": "Package",
-              "version": "[3.1.9, )"
+              "version": "[3.0.0, )"
             },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
+            "Microsoft.AspNetCore.SignalR.Protocols.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.AspNetCore.SpaServices.Extensions": {
               "target": "Package",
               "version": "[3.1.9, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer.Design": {
               "target": "Package",
               "version": "[1.1.6, )"
-            },
-            "Microsoft.EntityFrameworkCore.Sqlite": {
-              "target": "Package",
-              "version": "[3.1.9, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -99,6 +197,10 @@
             "NLog": {
               "target": "Package",
               "version": "[4.7.6, )"
+            },
+            "Ninject.Web.WebApi": {
+              "target": "Package",
+              "version": "[3.3.1, )"
             },
             "React.AspNet": {
               "target": "Package",
@@ -123,7 +225,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

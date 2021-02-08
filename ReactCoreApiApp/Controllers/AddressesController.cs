@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using System.Web.Http.Description;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using ReactCoreApiApp;
+using ReactCoreApiApp.DAL.Entities;
+using ReactCoreApiApp.DAL.Interfaces;
 using ReactCoreApiApp.Filters;
-using ReactCoreApiApp.Repository;
 
 namespace ReactCoreApiApp.Controllers
 {
@@ -23,9 +25,9 @@ namespace ReactCoreApiApp.Controllers
 
         // GET: api/Addresses
         [HttpGet]
-        public override IList<Addresses> Get()
+        public override IList<Addresses> Get(int? _page = null, int? _perPage = null, string _sortDir = null, string _sortField = null, string filter = null)
         {
-            return base.Get();
+            return base.Get(_page, _perPage, _sortDir, _sortField, filter);
         }
 
         // GET: api/Addresses/5
@@ -36,9 +38,11 @@ namespace ReactCoreApiApp.Controllers
         }
 
         //// PUT: api/Addresses/5
+        [ResponseType(typeof(Addresses))]
         [HttpPut("{id}")]
         public override IActionResult Put(Addresses addresses)
         {
+            Response.Headers.Add("Access-Control-Expose-Headers", "*");
             return base.Put(addresses);
         }
 
