@@ -6,119 +6,62 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ReactCoreApiApp;
+using ReactCoreApiApp.DAL.EF;
+using ReactCoreApiApp.DAL.Entities;
+using ReactCoreApiApp.DAL.Interfaces;
 using ReactCoreApiApp.Filters;
 
 namespace ReactCoreApiApp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UsersController : ControllerBase
+    public class UsersController : BaseApiController<Users>
     {
-        private readonly ShopContext _context;
-        public UsersController(ShopContext context)
+        public UsersController(IGenericRepository<Users> repository) : base(repository)
         {
-            _context = context;
         }
 
         // GET: api/Users
         [HttpGet]
-        [BaseResourceFilters]
-        public async Task<ActionResult<IEnumerable<Users>>> GetUsers()
+        public override IList<Users> Get(int? _page = null, int? _perPage = null, string _sortDir = null, string _sortField = null, string filter = null)
         {
-            return await _context.Users.ToListAsync();
+            return base.Get(_page, _perPage, _sortDir, _sortField, filter);
         }
 
         // GET: api/Users/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Users>> GetUsers(int id)
+        public override IActionResult Get(int id)
         {
-            var users = await _context.Users.FindAsync(id);
-
-            if (users == null)
-            {
-                return NotFound();
-            }
-
-            return users;
+            return base.Get(id);
         }
 
-        // PUT: api/Users/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        //// PUT: api/Users/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutUsers(int id, Users users)
+        public override IActionResult Put(Users Users)
         {
-            if (id != users.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(users).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!UsersExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
+            Response.Headers.Add("Access-Control-Expose-Headers", "*");
+            return base.Put(Users);
         }
 
-        // POST: api/Users
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        //// POST: api/Users
         [HttpPost]
-        public async Task<ActionResult<Users>> PostUsers(Users users)
+        public override IActionResult Post(Users Users)
         {
-            _context.Users.Add(users);
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateException)
-            {
-                if (UsersExists(users.Id))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return CreatedAtAction("GetUsers", new { id = users.Id }, users);
+            return base.Post(Users);
         }
 
-        // DELETE: api/Users/5
+        //// DELETE: api/Users/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Users>> DeleteUsers(int id)
+        public override IActionResult Delete(Users Users)
         {
-            var users = await _context.Users.FindAsync(id);
-            if (users == null)
-            {
-                return NotFound();
-            }
-
-            _context.Users.Remove(users);
-            await _context.SaveChangesAsync();
-
-            return users;
+            return base.Delete(Users);
         }
 
-        private bool UsersExists(int id)
+        // DELETE: api/Users/filter={,,,}
+        [HttpDelete]
+        public override IActionResult Delete(string filter)
         {
-            return _context.Users.Any(e => e.Id == id);
+            return base.Delete(filter);
         }
     }
 }

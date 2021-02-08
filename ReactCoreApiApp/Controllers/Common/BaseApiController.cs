@@ -11,8 +11,9 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using NLog;
 using ReactCoreApiApp.Controllers.Common;
+using ReactCoreApiApp.DAL.EF;
+using ReactCoreApiApp.DAL.Interfaces;
 using ReactCoreApiApp.Filters;
-using ReactCoreApiApp.Repository;
 
 namespace ReactCoreApiApp.Controllers
 {
@@ -28,9 +29,11 @@ namespace ReactCoreApiApp.Controllers
             _repository = repository;
         }
         [BaseResourceFilters]
-        public virtual IList<TEntity> Get()
+        public virtual IList<TEntity> Get(int? _page = null, int? _perPage = null, string _sortDir = null, string _sortField = null, string _filters = null)
         {
-            return _repository.Get().ToList();
+            var filter = Serializer.Desirializer(_filters);
+
+            return _repository.Get(filter).ToList();
         }
 
         public virtual IActionResult Get(int id)
@@ -49,7 +52,7 @@ namespace ReactCoreApiApp.Controllers
             }
             catch (Exception ex)
             {
-                logger.Error("Errorr base Get: " + ex);
+                logger.Error("Errorr base Get: " + ex.InnerException.Message);
                 return NotFound();
                 throw;
             }
@@ -60,11 +63,11 @@ namespace ReactCoreApiApp.Controllers
             try
             {
                 _repository.Create(item);
-                return Ok();
+                return Ok(item);
             }
             catch (Exception ex)
             {
-                logger.Error("Errorr base Post: " + ex);
+                logger.Error("Errorr base Post: " + ex.InnerException.Message);
                 return NotFound();
                 throw;
             }
@@ -75,11 +78,11 @@ namespace ReactCoreApiApp.Controllers
             try
             {
                 _repository.Remove(item);
-                return Ok();
+                return Ok(item);
             }
             catch (Exception ex)
             {
-                logger.Error("Errorr base Delete: " + ex);
+                logger.Error("Errorr base Delete: " + ex.InnerException.Message);
                 return NotFound();
                 throw;
             }
@@ -89,11 +92,11 @@ namespace ReactCoreApiApp.Controllers
             try
             {
                 _repository.Update(item);
-                return Ok();
+                return Ok(item);
             }
             catch (Exception ex)
             {
-                logger.Error("Errorr base Put: " + ex);
+                logger.Error("Errorr base Put: " + ex.InnerException.Message);
                 return NotFound();
                 throw;
             }
@@ -101,6 +104,7 @@ namespace ReactCoreApiApp.Controllers
 
         public virtual IActionResult Delete(string filter)
         {
+            List<TEntity> items = new List<TEntity>();
             var ListId = JsonConvert.DeserializeObject<Root>(filter);
             if (ListId.id == null)
             {
@@ -112,14 +116,15 @@ namespace ReactCoreApiApp.Controllers
                 {
                     var item = _repository.FindById(id);
                     _repository.Remove(item);
+                    items.Add(item);
                 }
                 catch (Exception ex)
                 {
-                    logger.Error("Errorr base Delete by filter: " + ex);
+                    logger.Error("Errorr base Delete by filter: " + ex.InnerException.Message);
                     continue;
                 }
             }
-            return Ok();
+            return Ok(items);
         }
 
         public class Root

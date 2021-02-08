@@ -2,124 +2,66 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
+using AutoMapper.Configuration.Annotations;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ReactCoreApiApp;
+using ReactCoreApiApp.DAL.Entities;
+using ReactCoreApiApp.DAL.Interfaces;
 using ReactCoreApiApp.Filters;
 
 namespace ReactCoreApiApp.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductsController : ControllerBase
+    public class ProductsController : BaseApiController<Products>
     {
-        private readonly ShopContext _context;
-
-        public ProductsController(ShopContext context)
+        public ProductsController(IGenericRepository<Products> repository) : base(repository)
         {
-            _context = context;
         }
 
         // GET: api/Products
         [HttpGet]
-        [BaseResourceFilters]
-        public async Task<ActionResult<IEnumerable<Products>>> GetProducts()
+        public override IList<Products> Get(int? _page = null, int? _perPage = null, string _sortDir = null, string _sortField = null, string filter = null)
         {
-            return await _context.Products.ToListAsync();
+            return base.Get(_page, _perPage, _sortDir, _sortField, filter);
         }
 
         // GET: api/Products/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Products>> GetProducts(int id)
+        public override IActionResult Get(int id)
         {
-            var products = await _context.Products.FindAsync(id);
-
-            if (products == null)
-            {
-                return NotFound();
-            }
-
-            return products;
+            return base.Get(id);
         }
 
-        // PUT: api/Products/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        //// PUT: api/Products/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutProducts(int id, Products products)
+        public override IActionResult Put(Products Products)
         {
-            if (id != products.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(products).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ProductsExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
+            return base.Put(Products);
         }
 
-        // POST: api/Products
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        //// POST: api/Products
         [HttpPost]
-        public async Task<ActionResult<Products>> PostProducts(Products products)
+        public override IActionResult Post(Products Products)
         {
-            _context.Products.Add(products);
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateException)
-            {
-                if (ProductsExists(products.Id))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return CreatedAtAction("GetProducts", new { id = products.Id }, products);
+            return base.Post(Products);
         }
 
-        // DELETE: api/Products/5
+        //// DELETE: api/Products/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Products>> DeleteProducts(int id)
+        public override IActionResult Delete(Products Products)
         {
-            var products = await _context.Products.FindAsync(id);
-            if (products == null)
-            {
-                return NotFound();
-            }
-
-            _context.Products.Remove(products);
-            await _context.SaveChangesAsync();
-
-            return products;
+            return base.Delete(Products);
         }
 
-        private bool ProductsExists(int id)
+        // DELETE: api/Products/filter={,,,}
+        [HttpDelete]
+        public override IActionResult Delete(string filter)
         {
-            return _context.Products.Any(e => e.Id == id);
+            return base.Delete(filter);
         }
     }
 }
