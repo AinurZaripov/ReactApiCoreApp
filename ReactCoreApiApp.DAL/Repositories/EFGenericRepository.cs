@@ -41,9 +41,9 @@ namespace ReactCoreApiApp.DAL.Repositories
                         case "id":
                             shopGet = shopGet.Where(w => w.Id.ToString().Contains(key.Value));
                             break;
-                        case "name":
-                            shopGet = shopGet.Where(w => w.Id.ToString().Contains(key.Value));
-                            break;
+                        //case "name":
+                        //    shopGet = shopGet.Where(w => w.Id.ToString().Contains(key.Value));
+                        //    break;
                         default:
                             break;
                     }

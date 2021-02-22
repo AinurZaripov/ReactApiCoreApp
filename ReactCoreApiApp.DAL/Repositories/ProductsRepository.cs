@@ -23,8 +23,8 @@ namespace ReactCoreApiApp.DAL.Repositories
         }
         public IEnumerable<Products> Get(Dictionary<string, string> filters)
         {
-            var shop = _context.Products.AsQueryable();
-            if (filters.Count > 0)
+            var shopGet = _context.Products.AsNoTracking().AsQueryable();
+            if (filters != null)
             {
                 int valueFilter;
                 foreach (var key in filters)
@@ -33,14 +33,36 @@ namespace ReactCoreApiApp.DAL.Repositories
                     switch (key.Key)
                     {
                         case "id":
-                            shop = shop.Where(w => w.Id == valueFilter);
+                            shopGet = shopGet.Where(w => w.Id.ToString().Contains(key.Value));
+                            break;
+                        case "AddressId":
+                            shopGet = shopGet.Where(w => w.AddressId.ToString().Contains(key.Value));
                             break;
                         default:
                             break;
                     }
                 }
             }
-            return shop.ToList();
+            return shopGet.ToList();
+
+            //var shop = _context.Products.AsQueryable();
+            //if (filters.Count > 0)
+            //{
+            //    int valueFilter;
+            //    foreach (var key in filters)
+            //    {
+            //        valueFilter = Convert.ToInt32(key.Value);
+            //        switch (key.Key)
+            //        {
+            //            case "id":
+            //                shop = shop.Where(w => w.Id == valueFilter);
+            //                break;
+            //            default:
+            //                break;
+            //        }
+            //    }
+            //}
+            //return shop.ToList();
         }
 
         public IEnumerable<Products> Get()
