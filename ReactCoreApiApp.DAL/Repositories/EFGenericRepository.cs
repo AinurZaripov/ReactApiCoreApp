@@ -27,6 +27,7 @@ namespace ReactCoreApiApp.DAL.Repositories
         //{
         //    throw new NotImplementedException();
         //}
+
         public virtual IEnumerable<TEntity> Get(Dictionary<string, string> filters)
         {
             var shopGet = _dbSet.AsNoTracking().AsQueryable();
